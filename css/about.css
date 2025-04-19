@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    padding: 40px 20px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .container {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .page-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #00b7eb;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  .section {
+    margin-bottom: 40px;
+    text-align: left; /* 全体を左寄せに */
+  }
+  
+  .section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+    color: #fff;
+  }
+  
+  .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50%;
+    height: 3px;
+    background-color: #00b7eb;
+    transition: width 0.3s ease;
+  }
+  
+  .section-title:hover::after {
+    width: 100%;
+  }
+  
+  .section p {
+    font-size: 1.1rem;
+    color: #ccc;
+    text-align: left; /* 本文を左寄せに変更 */
+  }
+  
+  .strike-through {
+    text-decoration: line-through;
+  }
+
+  /* 改行位置を広げる */
+  .section p br {
+    display: block;
+    margin-bottom: 15px; /* 改行後の間隔を広げる */
+  }
+  
+  .link {
+    color: #00b7eb;
+    text-decoration: none;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    border-bottom: 1px solid transparent;
+  }
+  
+  .link:hover {
+    color: #fff;
+    border-bottom: 1px solid #fff;
+  }
+  
+  /* レスポンシブ対応 */
+  @media (max-width: 600px) {
+    .page-title {
+      font-size: 2rem;
+    }
+  
+    .section-title {
+      font-size: 1.5rem;
+    }
+  
+    .section p {
+      font-size: 1rem;
+    }
+  }
