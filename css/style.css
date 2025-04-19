@@ -20,7 +20,7 @@ body {
 #chat-container {
   width: calc(100vw - 20px);
   max-width: 600px;
-  height: calc(100vh - 50px - env(safe-area-inset-bottom)); /* フッター40px + 隙間10px */
+  height: calc(100vh - 90px - env(safe-area-inset-bottom)); /* 入力欄56px + 隙間10px */
   background-color: #fff;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -91,13 +91,18 @@ body {
   flex-direction: column;
   gap: 10px;
   overscroll-behavior: contain;
+  margin-bottom: 66px; /* 入力欄56px + 隙間10px */
 }
 
 /* 入力欄 */
 #chat-input-container {
-  position: sticky;
-  bottom: 0;
-  width: 100%;
+  position: fixed; /* stickyからfixedに変更 */
+  bottom: calc(30px + env(safe-area-inset-bottom)); /* 最下部から10px */
+  left: 10px; /* bodyのpaddingと一致 */
+  right: 10px; /* bodyのpaddingと一致 */
+  width: calc(100vw - 20px);
+  max-width: 600px;
+  margin: 0 auto; /* 中央揃え */
   padding: 10px;
   display: flex;
   justify-content: space-between;
@@ -288,7 +293,7 @@ body {
 @media (max-width: 400px) {
   #chat-container {
     width: calc(100vw - 10px);
-    height: calc(100vh - 20px - env(safe-area-inset-bottom));
+    height: calc(100vh - 56px - env(safe-area-inset-bottom)); /* 入力欄56px */
     margin-top: calc(36px + env(safe-area-inset-top)); /* ヘッダー約36px + セーフエリア */
   }
 
@@ -301,6 +306,7 @@ body {
 
   #chat-log {
     padding: 8px;
+    margin-bottom: 66px; /* 入力欄56px + 隙間10px */
   }
 
   .message {
@@ -330,6 +336,9 @@ body {
   }
 
   #chat-input-container {
+    width: calc(100vw - 10px);
+    left: 5px;
+    right: 5px;
     padding: 8px;
   }
 
